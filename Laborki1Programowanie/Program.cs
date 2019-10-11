@@ -6,7 +6,11 @@ namespace Laborki1Programowanie
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Podaj Liczbe:");
+            string odpowiedz = Console.ReadLine();
+
+            int liczba = Convert.ToInt32(odpowiedz);
+
         }
     }
 }
