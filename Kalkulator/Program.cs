@@ -4,14 +4,14 @@ namespace Kalkulator
 {
     class Komputer
     {
-
+            public double predkosc;
+            public int ram;
+            public int dysk;
         public void Opisz()
         {
             Console.WriteLine(predkosc + " Ghz " + ram + " GB ");
         }
-        public double predkosc;
-        public int ram;
-        public int dysk;
+        
 
     }
     class Program
@@ -49,13 +49,14 @@ namespace Kalkulator
             switch (operacja)
             {
                 case "+":
-                    Kalkulator.dodaj(liczba1, liczba2);
+                    Console.WriteLine(Kalkulator.dodaj(liczba1, liczba2));
 
 
                     break;
 
                 case "-":
-                    Kalkulator.odejmij(liczba1, liczba2);
+                    Console.WriteLine(Kalkulator.odejmij(liczba1, liczba2));
+
                     break;
 
                 case "*":
