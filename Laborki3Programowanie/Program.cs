@@ -1,6 +1,4 @@
 ﻿using System;
-
-
 namespace Laborki3Programowanie
 {
     class Program
