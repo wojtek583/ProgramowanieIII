@@ -11,15 +11,9 @@ namespace Kalkulator
         {
             Console.WriteLine(predkosc + " Ghz " + ram + " GB ");
         }
-        
-
     }
     class Program
     {
-
-
-
-
         static void Main(string[] args)
         {
             Komputer komputer1 = new Komputer();
