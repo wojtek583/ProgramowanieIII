@@ -1,19 +1,11 @@
 ﻿using System;
 
-/*
-        klasy, nauczyc sie
 
-        petla foreach //w kazdej iteracji zwraca 1 element
-
-        
-
-
-
-*/
 namespace Laborki3Programowanie
 {
     class Program
     {
+        static float sredniacala = 0;
         public class Przedmiot
         {
             string nazwaPrzedmiotu = string.Empty;
@@ -21,7 +13,7 @@ namespace Laborki3Programowanie
             {
                 nazwaPrzedmiotu = n1;
             }
-            static float Srednia()
+            public float Srednia()
             {
                 int iloscOcen = 0;
                 float suma = 0;
@@ -40,37 +32,40 @@ namespace Laborki3Programowanie
                         }
                         else if (ocena == 0)
                         {
-                            Console.WriteLine("Wynik: ");
+                            Console.WriteLine("Srednia z przedmiotu: ");
                         }
                         else
                         {
                             Console.WriteLine("Podano niepoprawno liczbe");
                         }
-                        // TODO
-
                     }
                     else
                     {
                         Console.WriteLine("Podano niepoprawna liczbe");
                     }
-
                 }
+
                 float srednia = suma / iloscOcen;
+                sredniacala += srednia;
                 return srednia;
             }
-            
         }
         static void Main(string[] ar4gs)
         {
             Przedmiot przedmiot1 = new Przedmiot();
-            Przedmiot przedmiot2 = new Przedmiot();
-            Przedmiot przedmiot3 = new Przedmiot();
-            string txt = Console.ReadLine();
-            przedmiot2.ustawNazwe(txt);
-            
-            Console.WriteLine(przedmiot1.nazwaPrzedmiotu);
-            
+            Console.Write("Ilość przedmiotów: ");
+            int nr_przedmiotow = Convert.ToInt32(Console.ReadLine());
 
+            for (int i = 0; i < nr_przedmiotow; i++)
+            {
+                Console.Write("Podaj nazwe przedmiotu: ");
+                przedmiot1.ustawNazwe(Console.ReadLine());
+                Console.Write("Wpisz oceny: ");
+                Console.WriteLine(przedmiot1.Srednia());
+            }
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("============================================ \nSrednia ze wszystkich przedmiotów wynosi: " + sredniacala / nr_przedmiotow+ "\n============================================");
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }

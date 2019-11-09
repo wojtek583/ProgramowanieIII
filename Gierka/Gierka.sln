@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gierka", "Gierka.csproj", "{7A0BDAB9-5F34-439B-8F72-0096A705F122}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A0BDAB9-5F34-439B-8F72-0096A705F122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A0BDAB9-5F34-439B-8F72-0096A705F122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A0BDAB9-5F34-439B-8F72-0096A705F122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A0BDAB9-5F34-439B-8F72-0096A705F122}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A5BD6BF-7067-4D2A-B9BD-72384F4F0FC7}
+	EndGlobalSection
+EndGlobal
