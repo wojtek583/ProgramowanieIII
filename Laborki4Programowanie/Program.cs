@@ -1,83 +1,86 @@
 ﻿using System;
-using System.Threading;
 
-namespace Laborki4Programowanie
+namespace Kalkulator
 {
+    class Komputer
+    {
+            public double predkosc;
+            public int ram;
+            public int dysk;
+        public void Opisz()
+        {
+            Console.WriteLine(predkosc + " Ghz " + ram + " GB ");
+        }
+        
+
+    }
     class Program
     {
+
+
+
+
         static void Main(string[] args)
         {
+            Komputer komputer1 = new Komputer();
+            komputer1.predkosc = 3.5;
+            komputer1.ram = 16;
+            komputer1.dysk = 3500;
 
-            Ksiazka[,,] magazyn = new Ksiazka[3, 6, 10];
-            for (int i = 0; i < 3; i++)
+
+            Komputer komputer2 = new Komputer();
+            komputer2.predkosc = 4.5;
+            komputer2.ram = 15;
+            komputer2.dysk = 300;
+
+
+            komputer1.Opisz();
+            komputer2.Opisz();
+
+            string tekst1 = Kalkulator.wczytajLiczbe("1");
+            string tekst2 = Kalkulator.wczytajLiczbe("2");
+
+            Console.WriteLine("Wybierz operacje:  +  -  *  / ");
+            string operacja = Console.ReadLine();
+
+            int liczba1 = Convert.ToInt32(tekst1);
+            int liczba2 = Convert.ToInt32(tekst2);
+
+            switch (operacja)
             {
-                for (int j = 0; j < 6; j++)
-                {
-                    for (int k = 0; k < 10; k++)
-                    {
+                case "+":
+                    Console.WriteLine(Kalkulator.dodaj(liczba1, liczba2));
 
-                        magazyn[i, j, k] = new Ksiazka("Potop", "J.Slowacki", i, j, k);
+
+                    break;
+
+                case "-":
+                    Console.WriteLine(Kalkulator.odejmij(liczba1, liczba2));
+
+                    break;
+
+                case "*":
+                    Console.WriteLine(Kalkulator.mnoz(liczba1, liczba2));
+                    break;
+
+                case "/":
+                 
+                    try
+                    {
+                        Console.WriteLine(Kalkulator.PodzielZWyjatkiem(liczba1, liczba2));
+                    }
+                    catch (DivideByZeroException)
+                    {
+                        Console.WriteLine("Nie dziel przez 0");
 
                     }
-                }
+                    break;
+
+                default:
+                    Console.WriteLine("Wybrano zly typ operacji");
+
+                    break;
             }
-            
-            magazyn[1, 2, 3] = new Ksiazka("Robert", "Biedron", 1, 2, 3);
-
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 6; j++)
-                {
-                    for (int k = 0; k < 10; k++)
-                    {
-                        Console.Write(magazyn[i, j, k].Autor + " " + magazyn[i, j, k].Tytul + " ");
-                    }
-                    Console.WriteLine("      ");
-                }
-                Console.WriteLine(" ");
-            }
-            Console.WriteLine("Czego szukasz ");
-            Console.ForegroundColor = ConsoleColor.Green;
-            string tutu = Console.ReadLine();
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 6; j++)
-                {
-                    for (int k = 0; k < 10; k++)
-                    {
-                        if (magazyn[i, j, k].Autor == tutu || magazyn[i, j, k].Tytul == tutu)
-                        {
-                            Console.WriteLine("ksiazka znajduje sie na " + i + " regale " + j + " półce i na " + k + " miejscu");
-                        }
-                    }
-                }
-            }
-            Console.ForegroundColor = ConsoleColor.White;
-
-            //Console.WriteLine("Regal polka albo msc? ");
-            //Console.ForegroundColor = ConsoleColor.Green;
-            //int tutu1 = Convert.ToInt32(Console.ReadLine());
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    for (int j = 0; j < 6; j++)
-            //    {
-            //        for (int k = 0; k < 10; k++)
-            //        {
-            //            if (magazyn[i, j, k].Miejsce == tutu1 || magazyn[i, j, k].Regal == tutu1|| magazyn[i,j,k].Polka==tutu1 )
-            //            {
-            //                Console.WriteLine("Znaleziona ksiazka to: " + magazyn[i,j,k].Autor]);
-            //            }
-            //        }
-            //    }
-            //}
-            Console.Beep(659, 125); Console.Beep(659, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(167); Console.Beep(523, 125); Console.Beep(659, 125); Thread.Sleep(125); Console.Beep(784, 125); Thread.Sleep(375); Console.Beep(392, 125); Thread.Sleep(375); Console.Beep(523, 125); Thread.Sleep(250); Console.Beep(392, 125); Thread.Sleep(250); Console.Beep(330, 125); Thread.Sleep(250); Console.Beep(440, 125); Thread.Sleep(125); Console.Beep(494, 125); Thread.Sleep(125); Console.Beep(466, 125); Thread.Sleep(42); Console.Beep(440, 125); Thread.Sleep(125); Console.Beep(392, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(125); Console.Beep(784, 125); Thread.Sleep(125); Console.Beep(880, 125); Thread.Sleep(125); Console.Beep(698, 125); Console.Beep(784, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(125); Console.Beep(523, 125); Thread.Sleep(125); Console.Beep(587, 125); Console.Beep(494, 125); Thread.Sleep(125); Console.Beep(523, 125); Thread.Sleep(250); Console.Beep(392, 125); Thread.Sleep(250); Console.Beep(330, 125); Thread.Sleep(250); Console.Beep(440, 125); Thread.Sleep(125); Console.Beep(494, 125); Thread.Sleep(125); Console.Beep(466, 125); Thread.Sleep(42); Console.Beep(440, 125); Thread.Sleep(125); Console.Beep(392, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(125); Console.Beep(784, 125); Thread.Sleep(125); Console.Beep(880, 125); Thread.Sleep(125); Console.Beep(698, 125); Console.Beep(784, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(125); Console.Beep(523, 125); Thread.Sleep(125); Console.Beep(587, 125); Console.Beep(494, 125); Thread.Sleep(375); Console.Beep(784, 125); Console.Beep(740, 125); Console.Beep(698, 125); Thread.Sleep(42); Console.Beep(622, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(167); Console.Beep(415, 125); Console.Beep(440, 125); Console.Beep(523, 125); Thread.Sleep(125); Console.Beep(440, 125); Console.Beep(523, 125); Console.Beep(587, 125); Thread.Sleep(250); Console.Beep(784, 125); Console.Beep(740, 125); Console.Beep(698, 125); Thread.Sleep(42); Console.Beep(622, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(167); Console.Beep(698, 125); Thread.Sleep(125); Console.Beep(698, 125); Console.Beep(698, 125); Thread.Sleep(625); Console.Beep(784, 125); Console.Beep(740, 125); Console.Beep(698, 125); Thread.Sleep(42); Console.Beep(622, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(167); Console.Beep(415, 125); Console.Beep(440, 125); Console.Beep(523, 125); Thread.Sleep(125); Console.Beep(440, 125); Console.Beep(523, 125); Console.Beep(587, 125); Thread.Sleep(250); Console.Beep(622, 125); Thread.Sleep(250); Console.Beep(587, 125); Thread.Sleep(250); Console.Beep(523, 125); Thread.Sleep(1125); Console.Beep(784, 125); Console.Beep(740, 125); Console.Beep(698, 125); Thread.Sleep(42); Console.Beep(622, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(167); Console.Beep(415, 125); Console.Beep(440, 125); Console.Beep(523, 125); Thread.Sleep(125); Console.Beep(440, 125); Console.Beep(523, 125); Console.Beep(587, 125); Thread.Sleep(250); Console.Beep(784, 125); Console.Beep(740, 125); Console.Beep(698, 125); Thread.Sleep(42); Console.Beep(622, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(167); Console.Beep(698, 125); Thread.Sleep(125); Console.Beep(698, 125); Console.Beep(698, 125); Thread.Sleep(625); Console.Beep(784, 125); Console.Beep(740, 125); Console.Beep(698, 125); Thread.Sleep(42); Console.Beep(622, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(167); Console.Beep(415, 125); Console.Beep(440, 125); Console.Beep(523, 125); Thread.Sleep(125); Console.Beep(440, 125); Console.Beep(523, 125); Console.Beep(587, 125); Thread.Sleep(250); Console.Beep(622, 125); Thread.Sleep(250); Console.Beep(587, 125); Thread.Sleep(250); Console.Beep(523, 125);
-
-
-            //Linq ,, wyszukiwanie w liscie czyliii
-            // List<Ksiazka> lista = biblioteka.SelectMany itp , ogarnac cza
-
-
-
         }
     }
 }
