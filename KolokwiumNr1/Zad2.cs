@@ -4,7 +4,7 @@ namespace KolokwiumNr1
 {
     class Zad2
     {
-        public void Zadanie()
+        public static void ZadanieDrugie()
         {
             int[] z = new int[200];
 
@@ -13,18 +13,28 @@ namespace KolokwiumNr1
                 z[i] = i;
             }
 
+            Console.WriteLine("Wpisz liczbę przez którą chcesz dzielić:");
             string s = Console.ReadLine();
-            Console.WriteLine("z zakresu 1-200 Liczby podzielne przez: ");
             int ss = Convert.ToInt32(s);
-            
-         
-            for (int i = 0; i < 200; i++)
+
+            if (ss == 0)
             {
-                if (i % ss == 0 && i != 0)
-                {
-                    Console.Write(z[i] + " ");
-                }
+                Console.WriteLine("Nie można dzielić przez 0!");
             }
+
+            else
+            {
+                Console.WriteLine($"z zakresu 1-200 Liczby podzielne przez {s}: ");
+
+                   for (int i = 0; i < 200; i++)
+                   {
+                        if (i % ss == 0 && i != 0)
+                        {   
+                            Console.Write(z[i] + " ");
+                        }
+                   }
+            }
+            Console.WriteLine();
         }
     }
 }

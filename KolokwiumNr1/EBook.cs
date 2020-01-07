@@ -6,21 +6,34 @@ namespace KolokwiumNr1
 {
     class EBook
     {
-        public readonly string Autor;
-        public readonly string Tytul;
-        public readonly DateTime DataWydania;
-        public DateTime DataOstatniegoZakupu;
-        public float CenaStandardowa;
-        public float Obnizka;
-        public EBook(string _Autor,string _Tytul,DateTime _DataWydania, DateTime _DataOstatniegoZakupu,float _CenaStandardowa,float _Obnizka)
+        public String Autor { get; private set; }
+        public String Tytul { get; private set; }
+        public DateTime DataWydania { get; private set; }
+        public DateTime DataOstatniegoZakupu { get; set; }
+        public double CenaStandardowa { get; set; }
+        public double Obnizka { get; set; }
+        public double AktualnaCena { get; set; }
+
+        public EBook(string autor, string tytul, DateTime dataWydania, DateTime dataOstatniegoZakupu, double cenaStandardowa, double obnizka)
         {
-            Autor = _Autor;
-            Tytul = _Tytul;
-            DataWydania = _DataWydania;
-            DataOstatniegoZakupu = _DataOstatniegoZakupu;
-            CenaStandardowa = _CenaStandardowa;
-            Obnizka = _Obnizka;
-         }
+            Autor = autor;
+            Tytul = tytul;
+            DataWydania = dataWydania;
+
+            if (CenaStandardowa < 0) Console.WriteLine("Podano złą cenę");
+            else CenaStandardowa = cenaStandardowa;
+            
+            AktualnaCena=CenaStandardowa*((100-obnizka)/100);
+        }
+
+        public void NowaDataZakupu(DateTime nowaDataZakupu)
+        {
+            if (DataOstatniegoZakupu < nowaDataZakupu) Console.WriteLine("Zła data zakupu");
+            
+            else DataOstatniegoZakupu = nowaDataZakupu;
+        }
+
 
     }
 }
+

@@ -12,34 +12,38 @@ namespace KolokwiumNr1
             }
             else
             {
-               return Zad1(1.5*(Zad1(z-1))-1);
+               return 1.5*(Zad1(z-1))-1;
             }
         }
 
-
         static void WyswietlEbook(EBook ksiazka)
         {
-            Console.WriteLine(ksiazka.Autor+" "+ksiazka.CenaStandardowa+" "+ksiazka.DataOstatniegoZakupu+" "+ksiazka.DataWydania+" "+ksiazka.Obnizka);
+            Console.WriteLine(ksiazka.Autor+" "
+                             +ksiazka.Tytul+" "
+                             +ksiazka.DataWydania+" "
+                             +ksiazka.DataOstatniegoZakupu+" "
+                             +ksiazka.CenaStandardowa+" "
+                             +ksiazka.Obnizka
+                             +ksiazka.AktualnaCena);
         }
 
 
 
         static void Main(string[] args)
         {
-            //Console.WriteLine(Zad1(10));
+           Console.WriteLine(Zad1(10));
 
-            //Zad2 zadanie2 = new Zad2();
-            Zadanie3 zadanie3 = new Zadanie3();
-            zadanie3.DodajTablice();
+           Zad2.ZadanieDrugie();
 
-           // EBook ksiazka = new EBook("Jan Janiszewski","Nad wodami",new DateTime(12,29,1997), new DateTime(22,11,2019),149.99f,0f);
-            //WyswietlEbook(ksiazka);
-                
+           Zadanie3.DodajTablice();
 
-                
+           Zadanie4 zadanko4 = new Zadanie4();
+           zadanko4.Zadanie_4(zadanko4.tab);
 
+           EBook ksiazka1 = new EBook("B. Prus", "Lalka", new DateTime(1993,12,22), new DateTime(2020, 1, 10), 100.0, 10.0);
+            ksiazka1.NowaDataZakupu(new DateTime(2019, 1, 1));
+            WyswietlEbook(ksiazka1);
 
-            //zadanie.Zadanie();
         }
     }
 }
