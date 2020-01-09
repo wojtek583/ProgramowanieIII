@@ -9,7 +9,7 @@ namespace KolokwiumNr1
         public String Autor { get; private set; }
         public String Tytul { get; private set; }
         public DateTime DataWydania { get; private set; }
-        public DateTime DataOstatniegoZakupu { get; set; }
+        public DateTime DataOstatniegoZakupu { get; private set; }
         public double CenaStandardowa { get; set; }
         public double Obnizka { get; set; }
         public double AktualnaCena { get; set; }

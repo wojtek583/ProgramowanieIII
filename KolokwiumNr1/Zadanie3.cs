@@ -7,8 +7,6 @@ namespace KolokwiumNr1
 {
     class Zadanie3
     {
-       
-
         static public void DodajTablice()
         {
             int[,] tab1 = new int[3, 10];
@@ -45,9 +43,6 @@ namespace KolokwiumNr1
                 }
                 Console.WriteLine();
             }
-
-
-
         }
     }
 }
