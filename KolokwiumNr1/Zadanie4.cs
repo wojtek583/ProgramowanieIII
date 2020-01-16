@@ -49,7 +49,6 @@ namespace KolokwiumNr1
                     if (tablica[i][j] < min)
                     {
                         min = tablica[i][j];
-                        Console.WriteLine(min);
                     }
                 }
             }

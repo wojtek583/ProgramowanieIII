@@ -32,7 +32,7 @@ namespace Laborki10Programowanie
                 throw new ArgumentException();
             }
             return ZliczZnaki(text,character[0]);
-
+            
             */
         }
         public static int Znajdz(this string wyraz, char szukana, bool WazneDuzark)
