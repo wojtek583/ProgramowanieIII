@@ -24,7 +24,7 @@ namespace KolokwiumNr1
 
             else
             {
-                Console.WriteLine($"z zakresu 1-200 Liczby podzielne przez {s}: ");
+                Console.WriteLine($"Liczby podzielne przez {s} z zakresu 1-200: ");
 
                    for (int i = 0; i < 200; i++)
                    {
