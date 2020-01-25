@@ -29,14 +29,15 @@ namespace Laborki12Programowanie
 
         public void WriteToFilePhone(List<Person> person, string fileName)
         {
+            
             for (int i = 0; i < person.Count()/10; i++)
             {
                 fileName = $"1/{i}.txt";
                 using StreamWriter writer = new StreamWriter(fileName, false);
 
                    person.Skip(10);
-           
-                foreach (var item in person.Take(10))
+            
+                foreach (var item in person.Skip(i*10).Take(10))
                     {
                          writer.Write($"[{item.Phone}]\n");
                          
