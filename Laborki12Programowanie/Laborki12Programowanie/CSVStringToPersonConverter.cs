@@ -9,9 +9,8 @@ namespace Laborki12Programowanie
         static public Person Convert(string csvString)
         {
             string[] lineData = csvString.Split(',');
-            
-            return new Person(
-            System.Convert.ToInt32(lineData[0]), lineData[1], lineData[2], lineData[3]);
+
+            return new Person(System.Convert.ToInt32(lineData[0]), lineData[1], lineData[2], lineData[3]);
 
         }
     }

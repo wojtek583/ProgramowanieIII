@@ -12,14 +12,12 @@ namespace Laborki12Programowanie
         {
 
             using var reader = new StreamReader(filename);
-
             string data = reader.ReadToEnd();
 
             string[] lines = data.Split(new[] { '\n','\r'},StringSplitOptions.RemoveEmptyEntries);
-            
-            var people = lines.Select(x =>
-                CSVStringToPersonConverter.Convert(x)
-            );
+
+            var people = lines.Select(x => CSVStringToPersonConverter.Convert(x));
+
             return people.ToList();
         }
     }
