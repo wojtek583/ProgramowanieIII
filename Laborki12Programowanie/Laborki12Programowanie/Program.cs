@@ -21,10 +21,11 @@ namespace Laborki12Programowanie
 
             writer.WriteToFile(sortedPeople.First(), "result.txt");
             writer.PhonesToFile(people.ToList(), "numery.txt");
-            writer.WriteToFilePhone(people.ToList(), "1/10numerow.txt");
+            writer.WriteToFilePhone(people.ToList());
+
+            writer.FileForEveryLetter(people.ToList());
 
 
-           
         }
     }
 }
