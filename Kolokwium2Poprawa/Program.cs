@@ -77,6 +77,10 @@ namespace Kolokwium2Poprawa
             var wiadomosc = new Wiadomosc("Siabadabababdbabda", "Gal Anonim",new DateTime(1992,12,13));
             //var (string cas,string nazwa, Data) = wiadomosc;
             #endregion
+            Console.WriteLine("Zadanie 5:");
+            #region Zad5
+
+            #endregion
         }
     }
 }
