@@ -21,12 +21,15 @@ namespace Kolokwium2Programowanie
         public int suma4 { get; set; }
 
 
-        ~Ankieta()
+        public void Deconstruct(out int _glos, out int _glos2, out int _glos3, out int _glos4, out int suma)
         {
-            int suma;
+            _glos = Glos1;
+           _glos2 = Glos2;
+           _glos3 = Glos3;
+           _glos4 = Glos4;
             suma = Glos1 + Glos2 + Glos3 + Glos4;
         }
 
-        }
+    }
 }
 

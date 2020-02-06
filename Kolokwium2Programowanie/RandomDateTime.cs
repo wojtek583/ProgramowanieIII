@@ -12,7 +12,7 @@ namespace Kolokwium2Programowanie
 
         public RandomDateTime()
         {
-            start = new DateTime(1995, 1, 1);
+            start = new DateTime(2020, 1, 1);
             gen = new Random();
             range = (DateTime.Today - start).Days;
         }

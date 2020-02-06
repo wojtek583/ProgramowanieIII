@@ -7,7 +7,7 @@ namespace Laborki10Programowanie
         static void Main(string[] args)
         {
             #region Extensions
-           /*
+           
             int liczba = Convert.ToInt32(Console.ReadLine());
 
             (int wynik, int reszta) = liczba.Podziel(3);

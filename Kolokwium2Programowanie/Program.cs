@@ -49,6 +49,16 @@ namespace Kolokwium2Programowanie
             //    }
             //}
 
+
+            var data = DateTime.Now.AddDays(-7);
+            List<Gracz> last7d = new List<Gracz>().Where(x => x.OstatniaAktywnosc >= data).ToList();
+            
+            foreach (var item in last7d)
+            {
+                Console.WriteLine(item.OstatniaAktywnosc);
+            }
+
+
             //--------------- 2D----------------//
             Paczka paczka = new Paczka("Starosty 12",17);
             Console.WriteLine(   paczka.Lokalizacja); //dotychczasowa lokalizacja paczki
